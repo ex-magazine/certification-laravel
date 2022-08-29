@@ -12,8 +12,10 @@
         "ext-pdo": "*",
         "ext-zip": "^1.15",
         "anandsiddharth/laravel-paytm-wallet": "^2.0",
+        "anhskohbo/no-captcha": "^3.4",
         "bacon/bacon-qr-code": "^2.0",
         "barryvdh/laravel-dompdf": "^2.0",
+        "barryvdh/laravel-translation-manager": "^0.6.3",
         "cashuanony/phpanonymous": "dev-master",
         "coingate/coingate-php": "^4.1",
         "cviebrock/eloquent-sluggable": "^8.0",
@@ -33,11 +35,14 @@
         "kingflamez/laravelrave": "^4.2",
         "kornrunner/keccak": "^1.1",
         "laravel/framework": "^8.75",
+        "laravel/jetstream": "^2.9",
         "laravel/sanctum": "^2.11",
         "laravel/socialite": "^5.5",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
+        "laravelcollective/html": "^6.3",
         "league/omnipay": "^3.2",
+        "livewire/livewire": "^2.5",
         "maatwebsite/excel": "^3.1",
         "mailjet/mailjet-apiv3-php": "^1.5",
         "messagebird/php-rest-api": "^3.1",
@@ -49,7 +54,6 @@
         "omnipay/stripe": "^3.2",
         "orangehill/iseed": "^3.0",
         "phpmailer/phpmailer": "^6.6",
-        "pickbazar/shop": "dev-main",
         "pragmarx/google2fa": "^8.0",
         "pusher/pusher-php-server": "^7.0",
         "razorpay/razorpay": "^2.8",
@@ -62,6 +66,7 @@
         "spatie/laravel-google-calendar": "^3.5",
         "stripe/stripe-php": "^9.0",
         "textmagic/sdk": "dev-master",
+        "torann/geoip": "^3.0",
         "twilio/sdk": "^6.40",
         "tzsk/payu": "^5.2",
         "unicodeveloper/laravel-paystack": "^1.0",
@@ -99,9 +104,14 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Http/Helpers/helpers.php"
+            "app/Http/Helpers/helpers.php",
+            "app/Http/Helpers/Ammelias/ammeliashelper.php",
+            "app/Http/Helpers/Ammelias/corearray.php",
+            "app/Http/Helpers/Ammelias/coreconstant.php"
+                     
         ]
     },
+   
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"

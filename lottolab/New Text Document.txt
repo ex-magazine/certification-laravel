@@ -1,0 +1,100 @@
+php artisan make:migration ammelias_create_admin_settings_table --create=ammelias_admin_settings
+php artisan make:migration ammelias_create_blogs_table --create=ammelias_blogs
+php artisan make:migration ammelias_create_blog_categories_table --create=ammelias_blog_categories
+
+php artisan make:migration ammelias_create_blog_comments_table --create=ammelias_blog_comments
+php artisan make:migration ammelias_create_categories_table --create=ammelias_categories
+php artisan make:migration ammelias_create_contacts_table --create=ammelias_contacts
+php artisan make:migration ammelias_create_galleries_table --create=ammelias_galleries
+
+php artisan make:migration ammelias_create_gallery_categories_table --create=ammelias_gallery_categories
+php artisan make:migration ammelias_create_menus_table --create=ammelias_menus
+php artisan make:migration ammelias_create_oauth_auth_codes_table --create=ammelias_oauth_auth_codes
+php artisan make:migration ammelias_create_oauth_clients_table --create=ammelias_oauth_clients
+php artisan make:migration ammelias_create_oauth_personal_access_clients_table --create=ammelias_oauth_personal_access_clients
+
+php artisan make:migration ammelias_create_oauth_refresh_tokens_table --create=ammelias_oauth_refresh_tokens
+php artisan make:migration ammelias_create_password_resets_table --create=ammelias_password_resets
+php artisan make:migration ammelias_create_portfolios_table --create=ammelias_portfolios
+php artisan make:migration ammelias_create_portfolio_categories_table --create=ammelias_portfolio_categories
+php artisan make:migration ammelias_create_pricing_features_table --create=ammelias_pricing_features
+php artisan make:migration ammelias_create_pricing_plans_table --create=ammelias_pricing_plans
+
+
+
+php artisan make:migration ammelias_create_services_table --create=ammelias_services
+php artisan make:migration ammelias_create_subscribers_table --create=ammelias_subscribers
+php artisan make:migration ammelias_create_teams_table --create=ammelias_teams
+php artisan make:migration ammelias_create_testimonials_table --create=ammelias_testimonials
+
+php artisan make:migration ammelias_create_oauth_access_tokens_table --create=ammelias_oauth_access_tokens
+php artisan make:migration ammelias_create_users_table --create=ammelias_users
+php artisan make:migration ammelias_create_user_blogs_table --create=ammelias_user_blogs
+php artisan make:migration ammelias_create_user_verification_codes_table --create=ammelias_user_verification_codes
+
+
+php artisan make:migration alter_ammelias_blogs_table_add_slug --table=ammelias_blogs
+
+
+php artisan make:controller Ammelias/Admin/AdminController
+php artisan make:controller Ammelias/Admin/BlogController
+php artisan make:controller Ammelias/Admin/GalleryController
+php artisan make:controller Ammelias/Admin/MenuController
+php artisan make:controller Ammelias/Admin/PlanController
+php artisan make:controller Ammelias/Admin/PortfolioController
+php artisan make:controller Ammelias/Admin/ServiceController
+php artisan make:controller Ammelias/Admin/SettingController
+php artisan make:controller Ammelias/Admin/TeamController
+php artisan make:controller Ammelias/Admin/TestimonialController
+php artisan make:controller Ammelias/Admin/UserController
+php artisan make:controller Ammelias/Api/HomeController
+php artisan make:controller Ammelias/Auth/ForgotPasswordController
+php artisan make:controller Ammelias/Auth/LoginController
+php artisan make:controller Ammelias/Auth/RegisterController
+php artisan make:controller Ammelias/Auth/ResetPasswordController
+php artisan make:controller Ammelias/Auth/VerificationController
+
+
+
+php artisan make:model Ammelias/AdminSetting
+php artisan make:model Ammelias/Blog
+php artisan make:model Ammelias/BlogCategory
+php artisan make:model Ammelias/BlogComment
+php artisan make:model Ammelias/Category
+
+
+
+php artisan make:model Ammelias/Contact
+php artisan make:model Ammelias/Gallery
+php artisan make:model Ammelias/GalleryCategory
+php artisan make:model Ammelias/Menu
+php artisan make:model Ammelias/Portfolio
+
+
+php artisan make:model Ammelias/PortfolioCategory
+php artisan make:model Ammelias/PricingFeature
+php artisan make:model Ammelias/PricingPlan
+php artisan make:model Ammelias/Service
+php artisan make:model Ammelias/Subscriber
+php artisan make:model Ammelias/Team
+
+php artisan make:model Ammelias/Testimonial
+php artisan make:model Ammelias/UserBlog
+php artisan make:model Ammelias/User
+php artisan make:model Ammelias/UserVerificationCode
+
+
+
+
+
+
+
+
+
+
+//Smart env
+smartend_
+php artisan make:migration smartend_create_webmaster_languages_table --create=smartend_languages
+
+php artisan jetstream:install livewire
+npm install && npm run dev

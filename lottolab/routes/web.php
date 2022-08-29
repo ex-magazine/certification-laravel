@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Smartend\Auth\SocialAuthController;
+//use HomeController;
+use App\Http\Controllers\Smartend\LanguageController;
+use App\Http\Controllers\Smartend\SiteMapController;
+
 Route::get('/clear', function(){
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
 });
@@ -44,7 +49,7 @@ Route::namespace('Gateway')->prefix('ipn')->name('ipn.')->group(function () {
     Route::get('blockchain', 'Blockchain\ProcessController@ipn')->name('Blockchain');
     Route::get('blockio', 'Blockio\ProcessController@ipn')->name('Blockio');
     Route::post('coinpayments', 'Coinpayments\ProcessController@ipn')->name('Coinpayments');
-    Route::post('coinpayments-fiat', 'Coinpayments_fiat\ProcessController@ipn')->name('CoinpaymentsFiat');
+    Route::post('coinpayments-fiat', 'CoinpaymentsFiat\ProcessController@ipn')->name('CoinpaymentsFiat');
     Route::post('coingate', 'Coingate\ProcessController@ipn')->name('Coingate');
     Route::post('coinbase-commerce', 'CoinbaseCommerce\ProcessController@ipn')->name('CoinbaseCommerce');
     Route::get('mollie', 'Mollie\ProcessController@ipn')->name('Mollie');
@@ -469,3 +474,63 @@ Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name(
 
 Route::get('/{slug}', 'SiteController@pages')->name('pages');
 Route::get('/', 'SiteController@index')->name('home');
+
+
+
+
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Start Ammelias micro project
+|--------------------------------------------------------------------------
+*/
+/*
+
+//userLogin
+Route::get('/ammelias/signin','AuthController@login')->name('login');
+Route::post('/ammelias/postsignin','AuthController@postLogin')->name('postLogin');
+Route::get('/ammelias/verify-{id}-{verification_code}','AuthController@verifyEmail')->name('verifyEmail');
+
+//forgot password
+Route::get('/ammelias/forget-password','AuthController@forgetPassword')->name('forgetPassword');
+Route::post('/ammelias/forget-password-process', 'AuthController@forgetPasswordProcess')->name('forgetPasswordProcess');
+Route::get('/ammelias/forget-password-change/{reset_code}', 'AuthController@forgetPasswordChange')->name('forgetPasswordChange');
+Route::get('/ammelias/forget-password-reset', 'AuthController@forgetPasswordReset')->name('forgetPasswordReset');
+Route::post('/ammelias/forget-password-reset-process/{reset_code}', 'AuthController@forgetPasswordResetProcess')->name('forgetPasswordResetProcess');
+Route::get('/ammelias/privacy-and-policy', 'AuthController@privacyPolicy')->name('privacyPolicy');
+Route::get('/ammelias/terms-and-conditions', 'AuthController@termsCondition')->name('termsCondition');
+
+require base_path('routes/ammelias/admin.php');
+
+Route::group(['middleware' =>['auth']], function () {
+    //logout
+    Route::get('/ammelias/logout', 'AuthController@logout')->name('logOut');
+});
+
+*/
+
+
+/*
+|--------------------------------------------------------------------------
+| Start Smartend micro project
+|--------------------------------------------------------------------------
+*/
+
+require base_path('routes/smartend/dashboard.php');
+require base_path('routes/smartend/web.php');
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
