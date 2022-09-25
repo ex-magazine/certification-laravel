@@ -93,6 +93,131 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('password', 'AdminController@password')->name('password');
         Route::post('password', 'AdminController@passwordUpdate')->name('password.update');
 
+
+
+        Route::get('/ammelias-dashboard', 'AdminController@adminDashboard')->name('ammelias.adminDashboard');
+        Route::get('/search', 'AdminController@qsSearch')->name('ammelias.qsSearch');
+        Route::get('ammelias-contact-list', 'AdminController@contactList')->name('ammelias.contactList');
+        Route::get('ammelias-contact-{id}', 'AdminController@contactDetails')->name('ammelias.contactDetails');
+        Route::get('ammelias-subscriber-list', 'AdminController@subscriberList')->name('ammelias.subscriberList');
+    
+        //profile setting
+        Route::get('/ammelias-profile','ProfileController@userProfile')->name('ammelias.userProfile');
+        Route::get('/ammelias-password-change','ProfileController@passwordChange')->name('ammelias.passwordChange');
+        Route::post('/ammelias-update-profile','ProfileController@updateProfile')->name('ammelias.updateProfile');
+        Route::post('/ammelias-change-password','ProfileController@changePassword')->name('ammelias.changePassword');
+    
+        // Setting
+        Route::get('ammelias-general-setting', 'SettingController@adminSettings')->name('ammelias.adminSettings');
+        Route::get('ammelias-website-settings', 'SettingController@webSettings')->name('ammelias.webSettings');
+        Route::get('ammelias-about-us', 'SettingController@aboutSettings')->name('ammelias.aboutSettings');
+        Route::post('ammelias-about-us-setting-save', 'SettingController@adminAboutSettingsSave')->name('ammelias.adminAboutSettingsSave');
+        Route::post('ammelias-save-setting', 'SettingController@saveSettings')->name('ammelias.saveSettings');
+        Route::post('ammelias-save-image-setting', 'SettingController@adminImageUploadSave')->name('ammelias.adminImageUploadSave');
+        Route::post('ammelias-save-web-setting', 'SettingController@saveWebSettings')->name('ammelias.saveWebSettings');
+        Route::post('ammelias-save-achievement-setting', 'SettingController@saveAchievementSettings')->name('ammelias.saveAchievementSettings');
+    
+        //User Management
+        Route::get('ammelias-user-list', 'UserController@userList')->name('ammelias.userList');
+        Route::get('ammelias-add-user', 'UserController@addUser')->name('ammelias.addUser');
+        Route::get('ammelias-user-details/{id}', 'UserController@userDetails')->name('ammelias.userDetails');
+        Route::get('ammelias-user-edit/{id}', 'UserController@editUser')->name('ammelias.editUser');
+        Route::get('ammelias-user-delete/{id}', 'UserController@userDelete')->name('ammelias.userDelete');
+        Route::get('ammelias-user-active/{id}', 'UserController@userActivate')->name('ammelias.userActivate');
+        Route::get('ammelias-verify-user-email/{id}', 'UserController@userEmailVerify')->name('ammelias.userEmailVerify');
+        Route::post('ammelias-user-add-process', 'UserController@userAddProcess')->name('ammelias.userAddProcess');
+        Route::post('ammelias-user-update-process', 'UserController@userUpdateProcess')->name('ammelias.userUpdateProcess');
+
+        //Team Category
+        Route::get('team-category-list', 'TeamController@teamCategoryList')->name('ammelias.teamCategoryList');
+        Route::get('team-category-create', 'TeamController@teamCategoryCreate')->name('ammelias.teamCategoryCreate');
+        Route::post('team-category-save', 'TeamController@teamCategorySave')->name('ammelias.teamCategorySave');
+        Route::get('team-category-edit/{id}', 'TeamController@teamCategoryEdit')->name('ammelias.teamCategoryEdit');
+        Route::get('team-category-delete/{id}', 'TeamController@teamCategoryDelete')->name('ammelias.teamCategoryDelete');
+        
+        //Team
+        Route::get('team-list', 'TeamController@teamList')->name('ammelias.teamList'); 
+        Route::get('team-create', 'TeamController@teamCreate')->name('ammelias.teamCreate');
+        Route::post('team-save', 'TeamController@teamSave')->name('ammelias.teamSave');
+        Route::get('team-edit/{id}', 'TeamController@teamEdit')->name('ammelias.teamEdit');
+        Route::get('team-delete/{id}', 'TeamController@teamDelete')->name('ammelias.teamDelete');
+
+        // Service
+        Route::get('service-list', 'ServiceController@serviceList')->name('ammelias.serviceList');
+        Route::get('service-create', 'ServiceController@serviceCreate')->name('ammelias.serviceCreate');
+        Route::post('service-save', 'ServiceController@serviceSave')->name('ammelias.serviceSave');
+        Route::get('service-edit/{id}', 'ServiceController@serviceEdit')->name('ammelias.serviceEdit');
+        Route::get('service-delete/{id}', 'ServiceController@serviceDelete')->name('ammelias.serviceDelete');
+
+        // Portfolio Category
+        Route::get('portfolio-category-list', 'PortfolioController@portfolioCategoryList')->name('ammelias.portfolioCategoryList');
+        Route::get('portfolio-category-create', 'PortfolioController@portfolioCategoryCreate')->name('ammelias.portfolioCategoryCreate');
+        Route::post('portfolio-category-save', 'PortfolioController@portfolioCategorySave')->name('ammelias.portfolioCategorySave');
+        Route::get('portfolio-category-edit/{id}', 'PortfolioController@portfolioCategoryEdit')->name('ammelias.portfolioCategoryEdit');
+        Route::get('portfolio-category-delete/{id}', 'PortfolioController@portfolioCategoryDelete')->name('ammelias.portfolioCategoryDelete');
+
+        // Portfolio
+        Route::get('portfolio-list', 'PortfolioController@portfolioList')->name('ammelias.portfolioList');
+        Route::get('portfolio-create', 'PortfolioController@portfolioCreate')->name('ammelias.portfolioCreate');
+        Route::post('portfolio-save', 'PortfolioController@portfolioSave')->name('ammelias.portfolioSave');
+        Route::get('portfolio-edit/{id}', 'PortfolioController@portfolioEdit')->name('ammelias.portfolioEdit');
+        Route::get('portfolio-delete/{id}', 'PortfolioController@portfolioDelete')->name('ammelias.portfolioDelete');
+        Route::get('portfolio-img-delete', 'PortfolioController@deleteUploadedImage')->name('ammelias.deleteUploadedImage');
+
+         // testimonial
+        Route::get('testimonial-list', 'TestimonialController@testimonialList')->name('ammelias.testimonialList');
+        Route::get('testimonial-create', 'TestimonialController@testimonialCreate')->name('ammelias.testimonialCreate');
+        Route::post('testimonial-save', 'TestimonialController@testimonialSave')->name('ammelias.testimonialSave');
+        Route::get('testimonial-edit/{id}', 'TestimonialController@testimonialEdit')->name('ammelias.testimonialEdit');
+        Route::get('testimonial-delete/{id}', 'TestimonialController@testimonialDelete')->name('ammelias.testimonialDelete');
+
+            // Gallery Category
+        Route::get('gallery-category-list', 'GalleryController@galleryCategoryList')->name('ammelias.galleryCategoryList');
+        Route::get('gallery-category-create', 'GalleryController@galleryCategoryCreate')->name('ammelias.galleryCategoryCreate');
+        Route::post('gallery-category-save', 'GalleryController@galleryCategorySave')->name('ammelias.galleryCategorySave');
+        Route::get('gallery-category-edit/{id}', 'GalleryController@galleryCategoryEdit')->name('ammelias.galleryCategoryEdit');
+        Route::get('gallery-category-delete/{id}', 'GalleryController@galleryCategoryDelete')->name('ammelias.galleryCategoryDelete');
+
+        // Gallery
+        Route::get('gallery-list', 'GalleryController@galleryList')->name('ammelias.galleryList');
+        Route::get('gallery-create', 'GalleryController@galleryCreate')->name('ammelias.galleryCreate');
+        Route::post('gallery-save', 'GalleryController@gallerySave')->name('ammelias.gallerySave');
+        Route::get('gallery-edit/{id}', 'GalleryController@galleryEdit')->name('ammelias.galleryEdit');
+        Route::get('gallery-delete/{id}', 'GalleryController@galleryDelete')->name('ammelias.galleryDelete');
+
+        // Pricing plan
+        Route::get('plan-list', 'PlanController@planList')->name('ammelias.planList');
+        Route::get('plan-create', 'PlanController@planCreate')->name('ammelias.planCreate');
+        Route::post('plan-save', 'PlanController@planSave')->name('ammelias.planSave');
+        Route::get('plan-edit/{id}', 'PlanController@planEdit')->name('ammelias.planEdit');
+        Route::get('plan-delete/{id}', 'PlanController@planDelete')->name('ammelias.planDelete');
+
+        // blog Category
+        Route::get('blog-category-list', 'BlogController@blogCategoryList')->name('ammelias.blogCategoryList');
+        Route::get('blog-category-create', 'BlogController@blogCategoryCreate')->name('ammelias.blogCategoryCreate');
+        Route::post('blog-category-save', 'BlogController@blogCategorySave')->name('ammelias.blogCategorySave');
+        Route::get('blog-category-edit/{id}', 'BlogController@blogCategoryEdit')->name('ammelias.blogCategoryEdit');
+        Route::get('blog-category-delete/{id}', 'BlogController@blogCategoryDelete')->name('ammelias.blogCategoryDelete');
+
+        // blog
+        Route::get('blog-list', 'BlogController@blogList')->name('ammelias.blogList');
+        Route::get('blog-create', 'BlogController@blogCreate')->name('ammelias.blogCreate');
+        Route::post('blog-save', 'BlogController@blogSave')->name('ammelias.blogSave');
+        Route::get('blog-edit/{id}', 'BlogController@blogEdit')->name('ammelias.blogEdit');
+        Route::get('blog-delete/{id}', 'BlogController@blogDelete')->name('ammelias.blogDelete');
+
+        Route::get('comment-list/{id}', 'BlogController@commentList')->name('ammelias.commentList');
+        Route::get('comment-details/{id}', 'BlogController@commentDetails')->name('ammelias.commentDetails');
+        Route::get('comment-approve', 'BlogController@commentApprove')->name('ammelias.commentApprove');
+
+        // menu
+        Route::get('ammelias-menu-list', 'MenuController@menuList')->name('ammelias.menuList');
+        Route::get('menu-create', 'MenuController@menuCreate')->name('ammelias.menuCreate');
+        Route::post('menu-save', 'MenuController@menuSave')->name('ammelias.menuSave');
+        Route::get('menu-edit/{id}', 'MenuController@menuEdit')->name('ammelias.menuEdit');
+        Route::get('menu-delete/{id}', 'MenuController@menuDelete')->name('ammelias.menuDelete');
+        Route::get('change-menu-order', 'MenuController@customMenuOrder')->name('ammelias.customMenuOrder');
+
         //Notification
         Route::get('notifications','AdminController@notifications')->name('notifications');
         Route::get('notification/read/{id}','AdminController@notificationRead')->name('notification.read');
@@ -520,8 +645,8 @@ Route::group(['middleware' =>['auth']], function () {
 |--------------------------------------------------------------------------
 */
 
-require base_path('routes/smartend/dashboard.php');
-require base_path('routes/smartend/web.php');
+// require base_path('routes/smartend/dashboard.php');
+// require base_path('routes/smartend/web.php');
 
 
 

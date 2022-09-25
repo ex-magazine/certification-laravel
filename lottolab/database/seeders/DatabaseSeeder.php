@@ -27,5 +27,9 @@ class DatabaseSeeder extends Seeder
         // $this->call(BannersSeeder::class);
         // $this->call(TopicsSeeder::class);
         // $this->call(WebmailGroupsSeeder::class);
+
+         // $this->call(UsersTableSeeder::class);
+        //  $this->call(UserSeeder::class);
+        //  $this->call(AdminSettingSeeder::class);
     }
 }
