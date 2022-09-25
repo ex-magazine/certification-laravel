@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Models\Ammelias;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Gallery extends Model
 {
-    //use HasFactory;
     protected $fillable = ['name', 'category_id', 'description', 'image', 'status'];
 
     public function category()
@@ -16,12 +14,10 @@ class Gallery extends Model
     }
 
     public function getImageAttribute($photo){
-        $p = asset('assets/ammelias/images/avater.jpg');
+        $p = asset('assets/images/avater.jpg');
         if(!empty($photo)) {
             $p =  asset(path_image().$photo);
         }
         return $p;
     }
 }
-
-

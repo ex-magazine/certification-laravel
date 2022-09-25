@@ -1,61 +1,142 @@
 <?php
 
+
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
-use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens;
-    use HasFactory;
-    use HasProfilePhoto;
-    use Notifiable;
-    use TwoFactorAuthenticatable;
+    use Notifiable, HasApiTokens;
+
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password', 'country', 'language', 'phone', 'photo', 'active_status', 'role', 'email_verified', 'reset_code',
+        'city', 'state', 'zip', 'address','device_type', 'device_id','push_notification_status', 'email_notification_status'
+    ]; 
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var string[]
+     * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+
+    protected $guarded = ['id'];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password',
-        'remember_token',
-        'two_factor_recovery_codes',
-        'two_factor_secret',
+        'password', 'remember_token',
     ];
 
     /**
-     * The attributes that should be cast.
+     * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'address' => 'object',
+        'ver_code_send_at' => 'datetime'
     ];
 
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array
-     */
-    protected $appends = [
-        'profile_photo_url',
+    protected $data = [
+        'data'=>1
     ];
+
+
+
+
+    public function login_logs()
+    {
+        return $this->hasMany(UserLogin::class);
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class)->orderBy('id','desc');
+    }
+
+    public function deposits()
+    {
+        return $this->hasMany(Deposit::class)->where('status','!=',0);
+    }
+
+    public function withdrawals()
+    {
+        return $this->hasMany(Withdrawal::class)->where('status','!=',0);
+    }
+
+    public function wins()
+    {
+        return $this->hasMany(Winner::class);
+    }
+
+    public function lotteryTickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function tickets()
+    {
+        return $this->hasMany(SupportTicket::class);
+    }
+
+    public function referral()
+    {
+        return $this->hasMany(User::class,'ref_by');
+    }
+
+    public function commissions()
+    {
+        return $this->hasMany(CommissionLog::class,'to_id');
+    }
+
+
+    // SCOPES
+
+    public function getFullnameAttribute()
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
+
+    public function scopeActive()
+    {
+        return $this->where('status', 1);
+    }
+
+    public function scopeBanned()
+    {
+        return $this->where('status', 0);
+    }
+
+    public function scopeEmailUnverified()
+    {
+        return $this->where('ev', 0);
+    }
+
+    public function scopeSmsUnverified()
+    {
+        return $this->where('sv', 0);
+    }
+    public function scopeEmailVerified()
+    {
+        return $this->where('ev', 1);
+    }
+
+    public function scopeSmsVerified()
+    {
+        return $this->where('sv', 1);
+    }
+
 }

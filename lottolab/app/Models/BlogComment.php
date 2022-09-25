@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Models\Ammelias;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class BlogComment extends Model
 {
-    //use HasFactory;
     protected $fillable = ['blog_id', 'name', 'email', 'comment', 'status'];
 
     public function blog()
@@ -15,4 +14,3 @@ class BlogComment extends Model
         return $this->belongsTo(Blog::class,'blog_id');
     }
 }
-

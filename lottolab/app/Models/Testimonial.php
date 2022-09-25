@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Models\Ammelias;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Testimonial extends Model
 {
-    //use HasFactory;
     protected $fillable = ['name','profession', 'messages', 'image', 'status'];
 
     public function getImageAttribute($photo) {
-        $p = asset('assets/ammelias/images/avater.jpg');
+        $p = asset('assets/images/avater.jpg');
         if(!empty($photo)) {
             $p =  asset(path_image().$photo);
         }

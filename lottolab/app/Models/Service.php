@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Models\Ammelias;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-    //use HasFactory;
     protected $fillable = ['title', 'description', 'image', 'status'];
 
     public function getImageAttribute($photo){
-        $p = asset('assets/ammelias/images/default-product.jpg');
+        $p = asset('assets/images/default-product.jpg');
         if(!empty($photo)) {
             $p =  asset(path_image().$photo);
         }

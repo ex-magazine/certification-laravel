@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Models\Ammelias;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    //use HasFactory;
-
     protected $fillable = ['category_id', 'user_id', 'title', 'slug', 'description', 'image', 'status'];
 
     public function category()
@@ -22,7 +20,7 @@ class Blog extends Model
     }
 
     public function getImageAttribute($photo){
-        $p = asset('assets/ammelias/images/default-product.jpg');
+        $p = asset('assets/images/default-product.jpg');
         if(!empty($photo)) {
             $p =  asset(path_image().$photo);
         }
@@ -31,8 +29,8 @@ class Blog extends Model
 
     public static function get_comment_count($id)
     {
-        $item = BlogComment::join('ammelias_blogs','ammelias_blogs.id','=','ammelias_blog_comments.blog_id')
-            ->where(['ammelias_blogs.id'=>$id])
+        $item = BlogComment::join('blogs','blogs.id','=','blog_comments.blog_id')
+            ->where(['blogs.id'=>$id])
             ->count();
         return $item;
     }

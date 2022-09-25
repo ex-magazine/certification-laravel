@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Subscriber extends Model
 {
     protected $guarded = ['id'];
+    protected $fillable = ['email', 'status'];
 }
+

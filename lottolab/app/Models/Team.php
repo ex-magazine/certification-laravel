@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Models\Ammelias;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    //use HasFactory;
     protected $fillable = ['name', 'category_id', 'designation', 'image', 'bio', 'email', 'facebook', 'google',
-    'twitter', 'skype', 'linkedin', 'status'];
+        'twitter', 'skype', 'linkedin', 'status'];
 
     public function category()
     {
@@ -17,7 +15,7 @@ class Team extends Model
     }
 
     public function getImageAttribute($photo){
-        $p = asset('assets/ammelias/images/avater.jpg');
+        $p = asset('assets/images/avater.jpg');
         if(!empty($photo)) {
             $p =  asset(path_image().$photo);
         }

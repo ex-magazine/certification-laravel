@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Models\Ammelias;
+namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Portfolio extends Model
 {
-    //use HasFactory;
     protected $fillable = ['title', 'category_id', 'description', 'image', 'experience', 'client', 'date', 'demo', 'status'];
 
     public function category()
@@ -17,7 +15,7 @@ class Portfolio extends Model
 
     public function getImageAttribute($img)
     {
-        $p=[asset('assets/ammelias/images/default-product.jpg')];
+        $p=[asset('assets/images/default-product.jpg')];
         if(!empty($img)){
             $p=[];
             $temp = array_filter(explode('|',$img));
@@ -28,4 +26,3 @@ class Portfolio extends Model
         return $p;
     }
 }
-
