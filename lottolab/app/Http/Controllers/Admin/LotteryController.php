@@ -11,7 +11,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use HTMLPurifier;
 
-class LotteryController extends Controller
+class LotteryController extends Controller 
 {
     public function index(){
     	$pageTitle = "Lotteries";
