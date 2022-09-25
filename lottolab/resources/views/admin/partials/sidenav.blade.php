@@ -26,7 +26,138 @@
                     </a>
                 </li>
 
-
+                <li class="sidebar-menu-item sidebar-dropdown">
+                    <a href="javascript:void(0)" class="{{menuActive('admin.ammelias*',3)}}">
+                        <i class="menu-icon la la-ticket-alt"></i>
+                        <span class="menu-title">@lang('Ammelias v1.4')</span>
+                    </a>
+                    <div class="sidebar-submenu {{menuActive('admin.ammelias*',2)}} ">
+                        <ul>                   
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.adminDashboard')}} ">
+                                <a href="{{route('admin.ammelias.adminDashboard')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Ammelias Dashboard')</span>
+                                </a>
+                            </li>  
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.menuList')}} ">
+                                <a href="{{route('admin.ammelias.menuList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Menu List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.userList')}} ">
+                                <a href="{{route('admin.ammelias.userList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('User List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.webSettings')}} ">
+                                <a href="{{route('admin.ammelias.webSettings')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Web Settings')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.adminSettings')}} ">
+                                <a href="{{route('admin.ammelias.adminSettings')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('General Settings')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.aboutSettings')}} ">
+                                <a href="{{route('admin.ammelias.aboutSettings')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('About Settings')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.contactList')}} ">
+                                <a href="{{route('admin.ammelias.contactList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Contact List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.subscriberList')}} ">
+                                <a href="{{route('admin.ammelias.subscriberList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Subscriber List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.userProfile')}} ">
+                                <a href="{{route('admin.ammelias.userProfile')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('User Profile')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.teamList')}} ">
+                                <a href="{{route('admin.ammelias.teamList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Team List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.teamCategoryList')}} ">
+                                <a href="{{route('admin.ammelias.teamCategoryList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Category List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.serviceList')}} ">
+                                <a href="{{route('admin.ammelias.serviceList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Service List')</span>
+                                </a>
+                            </li>                        
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.portfolioCategoryList')}} ">
+                                <a href="{{route('admin.ammelias.portfolioCategoryList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Portfolio Category List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.portfolioList')}} ">
+                                <a href="{{route('admin.ammelias.portfolioList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Portfolio List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.testimonialList')}} ">
+                                <a href="{{route('admin.ammelias.testimonialList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Testimonial List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.galleryCategoryList')}} ">
+                                <a href="{{route('admin.ammelias.galleryCategoryList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Gallery Category List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.galleryList')}} ">
+                                <a href="{{route('admin.ammelias.galleryList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Gallery List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.planList')}} ">
+                                <a href="{{route('admin.ammelias.planList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Plan List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.blogCategoryList')}} ">
+                                <a href="{{route('admin.ammelias.blogCategoryList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Blog Category List')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.ammelias.blogList')}} ">
+                                <a href="{{route('admin.ammelias.blogList')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Blog List')</span>
+                                </a>
+                            </li>
+                
+                        </ul>
+                    </div>
+                </li>  
+   
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.lottery*',3)}}">
                         <i class="menu-icon la la-ticket-alt"></i>
