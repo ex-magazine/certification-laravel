@@ -77,6 +77,28 @@ class AppServiceProvider extends ServiceProvider
 
 
         Paginator::useBootstrap();
-        
+
+        /*
+        Schema::defaultStringLength(191);
+        Validator::extend('phone_number', function ($attribute, $value, $parameters, $validator) {
+            $first = substr($value, 0, 1);
+            if ($first == '+') {
+                $value = substr($value, 1);
+            }
+            return ctype_digit($value);
+        });
+        Validator::extend('strong_pass', function($attribute, $value, $parameters, $validator) {
+            return is_string($value) && preg_match('/^.*(?=.{3,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\d\X]).*$/', $value);
+        });
+
+        Passport::routes();
+
+       
+        $this->commands([
+            InstallCommand::class,
+            ClientCommand::class,
+            KeysCommand::class,
+        ]);
+        */
     }
 }
