@@ -2,10 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Smartend\Auth\SocialAuthController;
-//use HomeController;
-use App\Http\Controllers\Smartend\LanguageController;
-use App\Http\Controllers\Smartend\SiteMapController;
+
 
 Route::get('/clear', function(){
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');

@@ -21,7 +21,7 @@ class SettingService
         $this->logger = app(Logger::class);
     }
 
-    public function checkValidId($id){
+    public function checkValidId($id){ 
         try {
             $id = decrypt($id);
         } catch (\Exception $e) {

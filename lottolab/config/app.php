@@ -185,8 +185,6 @@ return [
         App\Providers\JetstreamServiceProvider::class,
 
 
-        App\Providers\Smartend\FortifyServiceProvider::class,
-        App\Providers\Smartend\JetstreamServiceProvider::class,
 
     ],
 
