@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2022 at 11:22 AM
+-- Generation Time: Sep 25, 2022 at 03:21 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `username`, `email_verified_at`, `image`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Super Admin', 'thuy.tranthanh.bd@gmail.com', 'admin', NULL, '5ff1c3531ed3f1609679699.jpg', '$2y$10$2qcOUKrDIUqyyCklvHp7IO8fGNcJ1gAXtxouTn1isZPHu6H8CfHPq', NULL, '2021-05-07 07:54:06');
+(1, 'Super Admin', 'thuy.tranthanh.bd@gmail.com', 'admin', NULL, '63303fd201acf1664106450.jpg', '$2y$10$2qcOUKrDIUqyyCklvHp7IO8fGNcJ1gAXtxouTn1isZPHu6H8CfHPq', NULL, '2022-09-25 04:47:30');
 
 -- --------------------------------------------------------
 
@@ -88,6 +88,196 @@ CREATE TABLE `admin_password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin_settings`
+--
+
+CREATE TABLE `admin_settings` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admin_settings`
+--
+
+INSERT INTO `admin_settings` (`id`, `slug`, `value`, `created_at`, `updated_at`) VALUES
+(1, 'app_title', 'Khatdecor LLC', '2020-01-07 00:51:25', '2022-09-25 06:16:42'),
+(2, 'logo', '633054c7db4561664111815.jpg', '2020-01-07 00:51:25', '2022-09-25 06:16:56'),
+(3, 'login_logo', '633054c8558101664111816.jpg', '2020-01-07 00:51:25', '2022-09-25 06:16:56'),
+(4, 'favicon', '633054c81df961664111816.jpg', '2020-01-07 00:51:25', '2022-09-25 06:16:56'),
+(5, 'copyright_text', 'Copyrights @2020 Khatdecor LLC', '2020-01-07 00:51:25', '2022-09-25 06:16:42'),
+(6, 'lang', 'en', '2020-01-07 00:51:25', '2020-01-07 00:51:25'),
+(7, 'primary_email', 'Khatdecor@email.com', '2020-01-07 00:51:25', '2022-09-25 06:16:42'),
+(8, 'contact_number', '', '2020-01-07 00:51:25', '2020-01-07 00:51:25'),
+(9, 'user_registration', '1', '2020-01-07 00:51:25', '2020-01-07 00:51:25'),
+(10, 'login_text', 'Ammelias', '2020-01-07 00:51:25', '2022-09-25 06:16:42'),
+(11, 'signup_text', 'Khatdecor LLC', '2020-01-07 00:51:25', '2022-09-25 06:16:42'),
+(12, 'about_banner_title', 'CRIS', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(13, 'about_title', 'SparkIT For Your Business Solution', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(14, 'about_video_id', 'Fe que todo llega...', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(15, 'about_section_title1', 'Our History 7 z', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(16, 'about_section_des1', 'The making of WigWag. Exposing the secret behind the complex story behind the brand we all know.', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(17, 'about_section_title2', 'Our Principles', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(18, 'about_section_des2', 'Ready to solve problems and eager to apply new ideas. This is the brave territory where we come together, and it’s hard to get there if you’re not having fun..', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(19, 'about_section_title3', 'Business success', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(20, 'about_section_des3', 'Ready to solve problems and eager to apply new ideas. This is the brave territory where we come together, and it’s hard to get there if you’re not having fun..', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(21, 'about_section_title4', 'Digital Solution', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(22, 'about_section_des4', 'Ready to solve problems and eager to apply new ideas. This is the brave territory where we come together, and it’s hard to get there if you’re not having fun..', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(23, 'about_sub_title', 'Know About Ammelias', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(24, 'about_description', 'Building your online presence helps attract more potential clients. Our integrated marketing team will work directly with you to understand what makes your business unique, and provide more qualified leads to achieve success in your industry', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(25, 'about_last_section_header_title', 'About Digital agency', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(26, 'about_last_section_title', 'Attract Customers With Content And SEO', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(27, 'about_last_section_sub_title', 'How Can Help Your Business?', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(28, 'about_last_description', 'Building your online presence helps attract more potential clients. Our integrated marketing team will work directly with you to understand what makes your business unique, and provide more qualified leads to achieve success in your industry', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(29, 'about_right_image', '63304eff6776e1664110335.jpg', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(30, 'about_banner_image', '63304eff99a691664110335.jpg', '2022-09-25 05:52:15', '2022-09-25 05:52:15'),
+(31, 'about_left_image', '63304effce7bc1664110335.jpg', '2022-09-25 05:52:16', '2022-09-25 05:52:16'),
+(32, 'home_banner_title', 'Test title updated', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(33, 'home_banner_sub_title', 'Lorem Ipsummm', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(34, 'home_section_title2', 'Test', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(35, 'home_banner_des', 'Test', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(36, 'home_section_des2', 'Test', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(37, 'home_testimonial_title', 'QUE PUTAS ES ESTO', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(38, 'home_blog_title', 'Test', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(39, 'home_banner_image', '63304f4fdc4331664110415.jpg', '2022-09-25 05:53:35', '2022-09-25 05:53:35'),
+(40, 'home_second_section_image', '63304f5000c211664110416.jpg', '2022-09-25 05:53:36', '2022-09-25 05:53:36'),
+(41, 'service_banner_title', 'Our Main', '2022-09-25 05:53:52', '2022-09-25 05:53:52'),
+(42, 'service_banner_des', 'Let us put your website consumers at moment in time they are searching your products services.', '2022-09-25 05:53:52', '2022-09-25 05:53:52'),
+(43, 'service_banner_image', '63304f60f3d661664110432.jpg', '2022-09-25 05:53:53', '2022-09-25 05:53:53'),
+(44, 'team_banner_title', 'Let us put your website', '2022-09-25 05:55:17', '2022-09-25 05:55:17'),
+(45, 'team_banner_des', 'Let us put your website consumers at moment in time they are searching your products services.', '2022-09-25 05:55:17', '2022-09-25 05:55:17'),
+(46, 'team_banner_image', '63304fb5921cf1664110517.jpg', '2022-09-25 05:55:17', '2022-09-25 05:55:17'),
+(47, 'portfolio_banner_title', 'they are searching your products services.', '2022-09-25 05:55:34', '2022-09-25 05:55:34'),
+(48, 'portfolio_banner_des', 'consumers at moment in time they are searching your products services.', '2022-09-25 05:55:34', '2022-09-25 05:55:34'),
+(49, 'portfolio_banner_image', '63304fc690f7f1664110534.jpg', '2022-09-25 05:55:34', '2022-09-25 05:55:34'),
+(50, 'gallery_banner_title', 'consumers at moment in time', '2022-09-25 05:55:46', '2022-09-25 05:55:46'),
+(51, 'gallery_banner_des', 'consumers at moment in time', '2022-09-25 05:55:46', '2022-09-25 05:55:46'),
+(52, 'gallery_banner_image', '63304fd2835391664110546.jpg', '2022-09-25 05:55:46', '2022-09-25 05:55:46'),
+(53, 'achievement_title', 'We Help To Increase Sales By Improving SEO.', '2022-09-25 05:56:32', '2022-09-25 05:56:32'),
+(54, 'achievement_sub_title', 'Know About Ammelias', '2022-09-25 05:56:32', '2022-09-25 05:56:32'),
+(55, 'achievement_des', 'Nam quis laoreet nisl. Vivamus nec quam magna.interdum etus blandit hendrerit ornare. Sed id leo nulla.', '2022-09-25 05:56:32', '2022-09-25 05:56:32'),
+(56, 'achievement_list1_title', 'Projects', '2022-09-25 05:56:32', '2022-09-25 05:56:32'),
+(57, 'achievement_list2_title', 'Cups of Coffee', '2022-09-25 05:56:32', '2022-09-25 05:56:32'),
+(58, 'achievement_list3_title', 'Projects', '2022-09-25 05:56:32', '2022-09-25 05:56:32'),
+(59, 'achievement_list4_title', 'Customer', '2022-09-25 05:56:33', '2022-09-25 05:56:33'),
+(60, 'achievement_list5_title', 'Clients', '2022-09-25 05:56:33', '2022-09-25 05:56:33'),
+(61, 'achievement_list5_count', '8', '2022-09-25 05:56:33', '2022-09-25 05:56:33'),
+(62, 'achievement_list4_count', '11', '2022-09-25 05:56:33', '2022-09-25 05:56:33'),
+(63, 'achievement_list3_count', '32', '2022-09-25 05:56:33', '2022-09-25 05:56:33'),
+(64, 'achievement_list2_count', '11', '2022-09-25 05:56:33', '2022-09-25 05:56:33'),
+(65, 'achievement_list1_count', '32', '2022-09-25 05:56:33', '2022-09-25 05:56:33'),
+(66, 'work_header_title', 'Say hello! SSSSS', '2022-09-25 05:57:00', '2022-09-25 05:57:00'),
+(67, 'work_title', 'Work inquiry', '2022-09-25 05:57:00', '2022-09-25 05:57:00'),
+(68, 'work_sub_title', 'Is to deliver awesome for our clients. By awesome, this should be a tangible impact on their business', '2022-09-25 05:57:00', '2022-09-25 05:57:00'),
+(69, 'work_des', 'We exist as a partner to businesses, crafting strategies that are aligned with our client’s business goals.', '2022-09-25 05:57:00', '2022-09-25 05:57:00'),
+(70, 'work_image', '6330501caa55a1664110620.jpg', '2022-09-25 05:57:00', '2022-09-25 05:57:00'),
+(71, 'address', '61 Arlington St. Suite 100 Boston, CA 01118, USA', '2022-09-25 06:16:42', '2022-09-25 06:16:42'),
+(72, 'front_base_color', '#ffffff', '2022-09-25 06:16:42', '2022-09-25 06:16:42'),
+(73, 'google_capcha_site_key', '6LeDrckUAAAAAP2PISECcnuOO8agpcPgB2PXVAPb', '2022-09-25 06:16:42', '2022-09-25 06:16:42'),
+(74, 'privacy_policy', 'Best Health Ketom Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nEste es una prueba', '2022-09-25 06:18:20', '2022-09-25 06:18:20'),
+(75, 'terms_conditions', 'Terms And Conditions:\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.-prueba', '2022-09-25 06:18:20', '2022-09-25 06:18:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(180) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `category_id`, `user_id`, `title`, `slug`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'Lorem Ipsum passages, and more', 'lorem-ipsum-passages,-and-more', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '632ed4b8668901664013496.jpg', 1, '2022-09-24 02:58:16', '2022-09-24 02:58:16'),
+(2, 2, 1, 'PageMaker including versions of Lorem Ipsum.', 'pagemaker-including-versions-of-lorem-ipsum.', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '632ed6a73a4291664013991.jpg', 1, '2022-09-24 03:06:31', '2022-09-24 03:06:31'),
+(3, 1, 1, 'and more recently with desktop publishing software like Aldus PageMaker', 'and-more-recently-with-desktop-publishing-software-like-aldus-pagemaker', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '632ed6be343821664014014.jpg', 1, '2022-09-24 03:06:54', '2022-09-24 03:06:54'),
+(4, 1, 1, 'PageMaker including versions of Lorem Ipsum', 'pagemaker-including-versions-of-lorem-ipsum', '<p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p><p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\"><br></span><br></p>', '632ffeef84a221664089839.jpg', 1, '2022-09-24 23:23:17', '2022-09-25 00:10:39'),
+(5, 2, 1, 'opposed to using \'Content here, content here\', making', 'opposed-to-using-\'content-here,-content-here\',-making', '<p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span></p><p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\"><br></span><br></p>', '632ffefa4dfdd1664089850.jpg', 1, '2022-09-24 23:24:28', '2022-09-25 00:10:50'),
+(6, 2, 1, 'PageMaker including versions of Lorem Ipsum', 'pagemaker-including-versions-of-lorem-ipsum-1', '<p>PageMaker including versions of Lorem Ipsum<br></p>', '633007cb6714b1664092107.jpg', 1, '2022-09-25 00:48:27', '2022-09-25 00:48:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_categories`
+--
+
+CREATE TABLE `blog_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `blog_categories`
+--
+
+INSERT INTO `blog_categories` (`id`, `title`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Lipsum Cate', 1, '2022-09-24 02:51:59', '2022-09-24 02:51:59'),
+(2, 'Lipsum Cate 2', 1, '2022-09-24 02:53:36', '2022-09-24 02:53:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_comments`
+--
+
+CREATE TABLE `blog_comments` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `blog_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Team Category 1', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)', '632d3fc4a2dba1663909828.jpg', 1, '2022-09-22 22:10:28', '2022-09-22 22:10:28'),
+(2, 'Team Category 2', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)', '632d4009802da1663909897.jpg', 1, '2022-09-22 22:11:37', '2022-09-22 22:11:37'),
+(3, 'Team Category 3', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)', '632d401816f991663909912.jpg', 1, '2022-09-22 22:11:52', '2022-09-22 22:11:52');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `commission_logs`
 --
 
@@ -102,6 +292,23 @@ CREATE TABLE `commission_logs` (
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `commission_type` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `trx` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -317,10 +524,58 @@ INSERT INTO `frontends` (`id`, `data_keys`, `data_values`, `views`, `created_at`
 (86, 'contact.content', '{\"title\":\"Get in Touch\",\"content\":\"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptates rerum corporis molestias dolores.\",\"address\":\"Medino, NY 10012, USA\",\"phone\":\"5488848798\",\"email\":\"demo@demo.com\"}', 0, '2021-06-12 13:19:41', '2021-06-12 13:19:41'),
 (87, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73a74705b61623669364.jpg\"}', 3, '2021-06-14 10:46:04', '2021-06-16 05:37:38'),
 (88, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73a95ec3891623669397.jpg\"}', 4, '2021-06-14 10:46:37', '2022-08-07 03:35:00'),
-(89, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73aafdcdea1623669423.jpg\"}', 6, '2021-06-14 10:47:03', '2022-08-07 02:32:28'),
+(89, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73aafdcdea1623669423.jpg\"}', 7, '2021-06-14 10:47:03', '2022-08-21 02:05:30'),
 (90, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73ac4a014c1623669444.jpg\"}', 3, '2021-06-14 10:47:24', '2021-06-16 06:20:04'),
 (91, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73ae590f041623669477.jpg\"}', 12, '2021-06-14 10:47:57', '2022-08-09 07:30:05'),
-(92, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73afce52f71623669500.jpg\"}', 35, '2021-06-14 10:48:20', '2022-08-08 06:58:59');
+(92, 'blog.element', '{\"has_image\":[\"1\"],\"title\":\"Laboriosam distinctio nisi debitis deleniti voluptatum corporis.\",\"short_description\":\"Lorem ipsum dolor sit amet, consectetur adipisic elit. Iusto eos rem ducimus nam! Optio, soluta. Laboriosam distinctio nisi debitis deleniti ducim.\",\"description_nic\":\"<div>Consectetuer in non nibh lorem posuere, sapien dictum dolor libero aliquam suspendisse, diam a eu tristique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum molestie, tortor ut orci ornare mi purus. Rhoncus vestibulum quam auctor id per, a luctus, in sed wisi. Arcu et, pulvinar non semper ac neque facilisis nec, pellentesque porttitor dapibus etiam non. Sit tempor nulla vivamus condimentum lorem tempus, velit diam in nullam semper culpa. Erat mattis. Volutpat vel vitae wisi nulla ipsum, non lorem dui mi, ut neque sed maecenas nonummy<\\/div><div><br \\/><\\/div><div>duis, interdum platea enim pretium suspendisse non enim. Ullamcorper duis, fermentum nulla. Suspendisse nec vestibulum odio proin ipsum tincidunt. Adipiscing pede dictum tellus nulla eget integer, felis wisi donec vehicula vel turpis ipsum.<\\/div><div><br \\/><\\/div><div>Aenean metus lectus at id. Morbi aliquet commodo a sodales eget. Eu justo ante nibh et a turpis, aliquam phasellus hymenaeos, imperdiet eget cras sociosqu, tincidunt a amet. Faucibus urna luctus, arcu ni<\\/div><div>Inceptos quam, nam felis tortor tortor sed porta, a facilisis dictumst luctus ipsum phasellus, faucibus aliquam diam ullamcorper, a id ultrices non suscipit nulla. Nam nulla aliquet, imperdiet sit in massa a enim, amet suscipit dui sodales class vestibulum, in ut nec urna sed quis vestibulum. Quisque quis amet turpis, rhoncus integer, sed elit sed amet in mi, amet magna feugiat.tique amet donec, sed vestibulum elit ut sollicitudin. Lacus vivamus elit<\\/div><div><br \\/><\\/div><div>quam lorem, arcu justo pede eget vivamus, fringilla vestibulum sit nec magna duis, vel sed condimentum vestibulum dignissim suspendisse purus. Amet vivamus vivamus netus nec orci molestie, nisl morbi pulvinar vulputate eget, mi a mauris odio vel vulputate, cubilia praesent posuere tellus at velit.urpis nec ligula, pulvinar erat<\\/div><div><br \\/><\\/div><div>Quam arcu ac, at adipiscing justo lectus sit nibh massa. Quam euismod, nam eu tellus, et massa non mauris consequat, consequat lectus ultrices. Mi laoreet nunc consequat erat amet. Sem dignissim. Dignissim ac non, convallis id, vitae aliquam id urna a, placerat urna mauris aliquet lorem molestie nec.<\\/div>\",\"image\":\"60c73afce52f71623669500.jpg\"}', 36, '2021-06-14 10:48:20', '2022-09-22 07:52:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galleries`
+--
+
+CREATE TABLE `galleries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `name`, `category_id`, `image`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'use Lorem Ipsum as their', 1, '633045540f6f01664107860.jpg', NULL, 1, '2022-09-25 05:11:00', '2022-09-25 05:11:00'),
+(2, 'page editors now use Lorem', 2, '63304572b0dbb1664107890.jpg', NULL, 1, '2022-09-25 05:11:30', '2022-09-25 05:11:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery_categories`
+--
+
+CREATE TABLE `gallery_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `gallery_categories`
+--
+
+INSERT INTO `gallery_categories` (`id`, `name`, `description`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'obscure Latin words', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.', 1, '2022-09-23 08:22:43', '2022-09-23 08:22:43'),
+(2, 'injected humour and the like', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', 1, '2022-09-25 05:10:18', '2022-09-25 05:10:18');
 
 -- --------------------------------------------------------
 
@@ -497,6 +752,32 @@ INSERT INTO `lotteries` (`id`, `name`, `image`, `status`, `detail`, `price`, `cr
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `menus`
+--
+
+CREATE TABLE `menus` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `component` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data_order` int(11) NOT NULL DEFAULT 0,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `parent_id` bigint(20) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `menus`
+--
+
+INSERT INTO `menus` (`id`, `title`, `slug`, `component`, `data_order`, `status`, `parent_id`, `created_at`, `updated_at`) VALUES
+(1, 'Home', 'home', 'HomePage', 0, 1, NULL, '2022-09-24 06:56:55', '2022-09-24 06:56:55'),
+(2, 'Home 2', 'home-2', 'HomePage', 0, 1, NULL, '2022-09-24 06:57:46', '2022-09-24 06:57:46');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -511,28 +792,171 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2020_06_14_061757_create_support_tickets_table', 3),
-(5, '2020_06_14_061837_create_support_messages_table', 3),
-(6, '2020_06_14_061904_create_support_attachments_table', 3),
-(7, '2020_06_14_062359_create_admins_table', 3),
-(8, '2020_06_14_064604_create_transactions_table', 4),
-(9, '2020_06_14_065247_create_general_settings_table', 5),
-(12, '2014_10_12_100000_create_password_resets_table', 6),
-(13, '2020_06_14_060541_create_user_logins_table', 6),
-(14, '2020_06_14_071708_create_admin_password_resets_table', 7),
-(15, '2020_09_14_053026_create_countries_table', 8),
-(16, '2021_03_15_084721_create_admin_notifications_table', 9),
-(17, '2016_06_01_000001_create_oauth_auth_codes_table', 10),
-(18, '2016_06_01_000002_create_oauth_access_tokens_table', 10),
-(19, '2016_06_01_000003_create_oauth_refresh_tokens_table', 10),
-(20, '2016_06_01_000004_create_oauth_clients_table', 10),
-(21, '2016_06_01_000005_create_oauth_personal_access_clients_table', 10),
-(22, '2021_05_08_103925_create_sms_gateways_table', 11),
-(23, '2019_12_14_000001_create_personal_access_tokens_table', 12),
-(24, '2021_05_23_111859_create_email_logs_table', 13),
-(25, '2022_08_13_085258_ammelias_create_admin_settings_table', 14);
+(208, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(209, '2022_08_13_085258_ammelias_create_admin_settings_table', 1),
+(210, '2022_08_13_085312_ammelias_create_blog_categories_table', 1),
+(211, '2022_08_13_085325_ammelias_create_categories_table', 1),
+(212, '2022_08_13_085330_ammelias_create_contacts_table', 1),
+(213, '2022_08_13_085342_ammelias_create_gallery_categories_table', 1),
+(214, '2022_08_13_085350_ammelias_create_menus_table', 1),
+(215, '2022_08_13_085356_ammelias_create_oauth_auth_codes_table', 1),
+(216, '2022_08_13_085404_ammelias_create_oauth_clients_table', 1),
+(217, '2022_08_13_085414_ammelias_create_oauth_personal_access_clients_table', 1),
+(218, '2022_08_13_085420_ammelias_create_oauth_refresh_tokens_table', 1),
+(219, '2022_08_13_085426_ammelias_create_password_resets_table', 1),
+(220, '2022_08_13_085438_ammelias_create_portfolio_categories_table', 1),
+(221, '2022_08_13_085450_ammelias_create_pricing_plans_table', 1),
+(222, '2022_08_13_085458_ammelias_create_services_table', 1),
+(223, '2022_08_13_085503_ammelias_create_subscribers_table', 1),
+(224, '2022_08_13_085508_ammelias_create_teams_table', 1),
+(225, '2022_08_13_085518_ammelias_create_testimonials_table', 1),
+(226, '2022_08_13_085531_ammelias_create_users_table', 1),
+(227, '2022_08_13_085541_ammelias_create_user_verification_codes_table', 1),
+(228, '2022_08_13_090430_ammelias_create_oauth_access_tokens_table', 1),
+(229, '2022_08_13_092532_ammelias_create_blogs_table', 1),
+(230, '2022_08_13_092645_ammelias_create_galleries_table', 1),
+(231, '2022_08_13_092759_ammelias_create_portfolios_table', 1),
+(232, '2022_08_13_092850_ammelias_create_pricing_features_table', 1),
+(233, '2022_08_13_093841_ammelias_create_blog_comments_table', 1),
+(234, '2022_08_13_094005_ammelias_create_user_blogs_table', 1),
+(235, '2022_08_14_013308_smartend_create_ltm_translations_table', 1),
+(236, '2022_08_14_013706_smartend_create_users_table', 1),
+(237, '2022_08_14_013807_smartend_create_password_resets_table', 1),
+(238, '2022_08_14_013904_smartend_create_failed_jobs_table', 1),
+(239, '2022_08_14_014108_smartend_create_sessions_table', 1),
+(240, '2022_08_14_020311_smartend_create_webmaster_settings_table', 1),
+(241, '2022_08_14_020520_smartend_create_webmaster_sections_table', 1),
+(242, '2022_08_14_020609_smartend_create_webmaster_banners_table', 1),
+(243, '2022_08_14_020653_smartend_create_webmails_groups_table', 1),
+(244, '2022_08_14_020735_smartend_create_webmails_files_table', 1),
+(245, '2022_08_14_020827_smartend_create_webmails_table', 1),
+(246, '2022_08_14_020913_smartend_create_topics_table', 1),
+(247, '2022_08_14_021000_smartend_create_settings_table', 1),
+(248, '2022_08_14_021042_smartend_create_sections_table', 1),
+(249, '2022_08_14_021216_smartend_create_photos_table', 1),
+(250, '2022_08_14_021304_smartend_create_permissions_table', 1),
+(251, '2022_08_14_021423_smartend_create_menus_table', 1),
+(252, '2022_08_14_021619_smartend_create_maps_table', 1),
+(253, '2022_08_14_021717_smartend_create_events_table', 1),
+(254, '2022_08_14_021808_smartend_create_countries_table', 1),
+(255, '2022_08_14_021903_smartend_create_contacts_groups_table', 1),
+(256, '2022_08_14_021954_smartend_create_contacts_table', 1),
+(257, '2022_08_14_022104_smartend_create_comments_table', 1),
+(258, '2022_08_14_022151_smartend_create_banners_table', 1),
+(259, '2022_08_14_022235_smartend_create_attach_files_table', 1),
+(260, '2022_08_14_022357_smartend_create_analytics_visitors_table', 1),
+(261, '2022_08_14_022446_smartend_create_analytics_pages_table', 1),
+(262, '2022_08_14_022526_smartend_create_related_topics_table', 1),
+(263, '2022_08_14_022610_smartend_create_topic_categories_table', 1),
+(264, '2022_08_14_022710_smartend_create_topic_fields_table', 1),
+(265, '2022_08_14_022754_smartend_create_webmaster_section_fields_table', 1),
+(266, '2022_08_14_022838_smartend_create_webmaster_languages_table', 1),
+(267, '2022_08_15_200000_add_two_factor_columns_to_users_table', 1),
+(268, '2022_08_21_084915_create_sessions_table', 2),
+(269, '2022_09_23_023101_create_categories_table', 3),
+(270, '2022_09_23_023130_create_teams_table', 4),
+(271, '2022_09_23_073037_create_admin_settings_table', 5),
+(272, '2022_09_23_080936_create_services_table', 6),
+(273, '2022_09_23_133035_create_portfolio_categories_table', 7),
+(274, '2022_09_23_133048_create_portfolios_table', 8),
+(275, '2022_09_23_144700_create_testimonials_table', 9),
+(276, '2022_09_23_144832_create_blog_categories_table', 10),
+(277, '2022_09_23_144850_create_blogs_table', 11),
+(278, '2022_09_23_145123_create_menus_table', 12),
+(279, '2022_09_23_145254_create_user_blogs_table', 13),
+(280, '2022_09_23_150019_add_slug_at_blog_table', 14),
+(281, '2022_09_23_150346_add_status_at_subscriber_table', 15),
+(282, '2022_09_23_152130_create_gallery_categories_table', 16),
+(283, '2022_09_23_152137_create_galleries_table', 17),
+(284, '2022_09_23_152540_create_pricing_plans_table', 18),
+(285, '2022_09_23_153204_create_pricing_features_table', 19),
+(286, '2022_09_24_092458_alter_users_table_add_more', 20),
+(287, '2016_06_01_000001_create_oauth_auth_codes_table', 21),
+(288, '2016_06_01_000002_create_oauth_access_tokens_table', 22),
+(289, '2016_06_01_000003_create_oauth_refresh_tokens_table', 23),
+(290, '2016_06_01_000004_create_oauth_clients_table', 24),
+(291, '2016_06_01_000005_create_oauth_personal_access_clients_table', 25),
+(292, '2018_12_26_075334_create_user_verification_codes_table', 26),
+(293, '2022_09_25_062816_create_blog_comments_table', 27),
+(294, '2022_09_25_115727_create_contacts_table', 28);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_access_tokens`
+--
+
+CREATE TABLE `oauth_access_tokens` (
+  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `client_id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `scopes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `expires_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_auth_codes`
+--
+
+CREATE TABLE `oauth_auth_codes` (
+  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `scopes` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_clients`
+--
+
+CREATE TABLE `oauth_clients` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `secret` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `redirect` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `personal_access_client` tinyint(1) NOT NULL,
+  `password_client` tinyint(1) NOT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_personal_access_clients`
+--
+
+CREATE TABLE `oauth_personal_access_clients` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `oauth_refresh_tokens`
+--
+
+CREATE TABLE `oauth_refresh_tokens` (
+  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `access_token_id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `revoked` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -625,6 +1049,104 @@ INSERT INTO `phases` (`id`, `phase_number`, `lottery_id`, `start`, `end`, `quant
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `portfolios`
+--
+
+CREATE TABLE `portfolios` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `experience` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `client` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `demo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `portfolio_categories`
+--
+
+CREATE TABLE `portfolio_categories` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `portfolio_categories`
+--
+
+INSERT INTO `portfolio_categories` (`id`, `name`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Lorem Ipsum is simply', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '632dbb0d947d11663941389.jpg', 1, '2022-09-23 06:56:29', '2022-09-23 06:56:29'),
+(2, 'Lorem Ipsum is simply', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '632dbb754436d1663941493.jpg', 1, '2022-09-23 06:58:13', '2022-09-23 06:58:13'),
+(3, 'Lorem Ipsum passages', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '632dbb8ca3bad1663941516.jpg', 1, '2022-09-23 06:58:36', '2022-09-23 06:58:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pricing_features`
+--
+
+CREATE TABLE `pricing_features` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `plan_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pricing_features`
+--
+
+INSERT INTO `pricing_features` (`id`, `plan_id`, `title`, `created_at`, `updated_at`) VALUES
+(3, 2, 'OK', '2022-09-25 05:08:24', '2022-09-25 05:08:24'),
+(4, 2, 'OK 2', '2022-09-25 05:08:24', '2022-09-25 05:08:24'),
+(5, 1, 'OK', '2022-09-25 05:08:39', '2022-09-25 05:08:39'),
+(6, 1, 'OK 2', '2022-09-25 05:08:39', '2022-09-25 05:08:39'),
+(7, 3, 'OK 2', '2022-09-25 05:09:18', '2022-09-25 05:09:18'),
+(8, 3, 'OK 6', '2022-09-25 05:09:18', '2022-09-25 05:09:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pricing_plans`
+--
+
+CREATE TABLE `pricing_plans` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` decimal(13,2) NOT NULL DEFAULT 0.00,
+  `duration` int(11) NOT NULL DEFAULT 0,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pricing_plans`
+--
+
+INSERT INTO `pricing_plans` (`id`, `title`, `description`, `price`, `duration`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'PageMaker including versions of Lorem Ipsum 2', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '45.53', 30, 1, '2022-09-25 05:06:55', '2022-09-25 05:08:39'),
+(2, 'PageMaker including versions of Lorem Ipsum', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '45.53', 30, 1, '2022-09-25 05:08:24', '2022-09-25 05:08:24'),
+(3, 'Various versions have evolved', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '42.90', 365, 1, '2022-09-25 05:09:18', '2022-09-25 05:09:18');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `referrals`
 --
 
@@ -641,12 +1163,60 @@ CREATE TABLE `referrals` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `title`, `description`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'injected humour and the like', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '632d6df7d4abc1663921655.jpg', 1, '2022-09-23 01:27:35', '2022-09-23 01:27:35'),
+(2, 'injected humour and the like 3', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '632d6e81660f51663921793.jpg', 1, '2022-09-23 01:29:53', '2022-09-25 05:13:00'),
+(3, 'use Lorem Ipsum as their', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '633045be96cf91664107966.jpg', 1, '2022-09-25 05:12:46', '2022-09-25 05:12:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payload` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_activity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+('sgbgAz3tTRBgXz7xeus4sdQvpZWl0kfIaVzs9Zkx', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiM2JjSEh1SmtlaGY0R2VGR1ZUelJmWlJzbUpzSnd5VEpxQTUwb3JkRSI7czo0OiJsYW5nIjtzOjI6ImVuIjtzOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czo1MjoiaHR0cDovL2l0dHJhdmVsLmxvY2FsL2FkbWluL2FtbWVsaWFzLWdlbmVyYWwtc2V0dGluZyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1664111901);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subscribers`
 --
 
 CREATE TABLE `subscribers` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `email` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -655,11 +1225,12 @@ CREATE TABLE `subscribers` (
 -- Dumping data for table `subscribers`
 --
 
-INSERT INTO `subscribers` (`id`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'thuy.tranthanh.bd@gmail.com', '2022-08-07 02:41:07', '2022-08-07 02:41:07'),
-(2, 'tranthanhbinhmathdephcm@gmail.com', '2022-08-07 02:41:24', '2022-08-07 02:41:24'),
-(3, 'admin@expressmagazine.net', '2022-08-07 02:41:27', '2022-08-07 02:41:27'),
-(4, 'asaleotestf@gmail.com', '2022-08-07 03:34:38', '2022-08-07 03:34:38');
+INSERT INTO `subscribers` (`id`, `email`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'thuy.tranthanh.bd@gmail.com', 1, '2022-08-07 02:41:07', '2022-08-07 02:41:07'),
+(2, 'tranthanhbinhmathdephcm@gmail.com', 1, '2022-08-07 02:41:24', '2022-08-07 02:41:24'),
+(3, 'admin@expressmagazine.net', 1, '2022-08-07 02:41:27', '2022-08-07 02:41:27'),
+(4, 'asaleotestf@gmail.com', 1, '2022-08-07 03:34:38', '2022-08-07 03:34:38'),
+(5, 'thuy.tranthanh.bd.001@gmail.com', 1, '2022-08-14 03:36:32', '2022-08-14 03:36:32');
 
 -- --------------------------------------------------------
 
@@ -709,6 +1280,64 @@ CREATE TABLE `support_tickets` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bio` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `google` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `skype` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `linkedin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `name`, `category_id`, `designation`, `image`, `bio`, `email`, `facebook`, `google`, `twitter`, `skype`, `linkedin`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Tran Thanh Thuy', 1, 'Designation', '632d51b84dcbf1663914424.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'tranthanhbinhmathdephcm@gmail.com', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 1, '2022-09-22 23:27:04', '2022-09-22 23:27:04'),
+(2, 'Tran Thanh Thuy', 2, 'Designation', '632d52626cd601663914594.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'tranthanhbinhmathdephcm02@gmail.com', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 1, '2022-09-22 23:29:54', '2022-09-22 23:29:54'),
+(3, 'Tran Thanh Thuy', 3, 'Designation', '632d52b119f891663914673.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'tranthanhbinhmathdephcm3@gmail.com', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 1, '2022-09-22 23:31:13', '2022-09-22 23:31:13'),
+(4, 'Tran Thanh Thuy', 2, 'Designation', '632d53017b1491663914753.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'tranthanhbinhmathdephcm4@gmail.com', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 'https://expressmagazine.net/', 1, '2022-09-22 23:32:33', '2022-09-22 23:32:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonials`
+--
+
+CREATE TABLE `testimonials` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profession` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `messages` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `profession`, `messages`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'dummy text of', 'typesetting', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum', '632dcc9da58cf1663945885.jpg', 1, '2022-09-23 08:11:25', '2022-09-23 08:11:25');
 
 -- --------------------------------------------------------
 
@@ -781,6 +1410,22 @@ CREATE TABLE `users` (
   `username` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_code` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_notification_status` tinyint(4) NOT NULL DEFAULT 1,
+  `push_notification_status` tinyint(4) NOT NULL DEFAULT 1,
+  `device_type` tinyint(4) NOT NULL DEFAULT 1,
+  `language` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `device_id` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zip` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reset_code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `role` tinyint(4) NOT NULL DEFAULT 2,
+  `photo` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `active_status` tinyint(4) NOT NULL DEFAULT 1,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mobile` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ref_by` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `balance` decimal(28,8) NOT NULL DEFAULT 0.00000000,
@@ -804,9 +1449,33 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `country_code`, `mobile`, `ref_by`, `balance`, `password`, `image`, `address`, `status`, `ev`, `sv`, `ver_code`, `ver_code_send_at`, `ts`, `tv`, `tsc`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Tran', 'Thuy', 'tranthanhbinhmathdephcm001', 'tranthanhbinhmathdephcm.001@gmail.com', 'VN', '840936637595', 0, '64459.00000000', '$2y$10$ntkFcfElzbOetDxoqpcoX.QErAzHh3w.jjg5wdLVjxkPiOixggPH.', NULL, '{\"address\":\"\",\"state\":\"\",\"zip\":\"\",\"country\":\"Vietnam\",\"city\":\"\"}', 1, 1, 1, NULL, NULL, 0, 1, NULL, NULL, '2022-08-11 08:42:58', '2022-08-13 01:28:11'),
-(2, 'Tran', 'Thuy', 'tranthanhbinhmathdephcm002', 'tranthanhbinhmathdephcm.002@gmail.com', 'AF', '930936637594', 0, '0.00000000', '$2y$10$3IDQB2LX3OdtIHNrXI89AOV1EbwW8.hUoydmXRfml0JLe4ypIodku', '62f524064be621660232710.png', '{\"address\":\"10 Vo Van Tan\",\"state\":\"HCMC\",\"zip\":\"70000\",\"country\":\"Afghanistan\",\"city\":\"HCMC\"}', 1, 1, 1, NULL, NULL, 0, 1, NULL, NULL, '2022-08-11 08:44:03', '2022-08-11 08:45:10');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `country_code`, `email_notification_status`, `push_notification_status`, `device_type`, `language`, `device_id`, `zip`, `state`, `city`, `reset_code`, `email_verified`, `role`, `photo`, `phone`, `country`, `active_status`, `name`, `mobile`, `ref_by`, `balance`, `password`, `image`, `address`, `status`, `ev`, `sv`, `ver_code`, `ver_code_send_at`, `ts`, `tv`, `tsc`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Tran', 'Thuy', 'tranthanhbinhmathdephcm001', 'tranthanhbinhmathdephcm.001@gmail.com', 'VN', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '1', 1, NULL, NULL, 'DS', 1, 'tranthanhbinhmathdephcm.001', '840936637595', 0, '64459.00000000', '$2y$10$ntkFcfElzbOetDxoqpcoX.QErAzHh3w.jjg5wdLVjxkPiOixggPH.', '62f84b7ec746c1660439422.png', '{\"address\":\"63 Vo Van Tan\",\"state\":\"HCMC\",\"zip\":\"700000\",\"country\":\"Vietnam\",\"city\":\"HCMC\"}', 1, 1, 1, NULL, NULL, 0, 1, NULL, NULL, '2022-08-11 08:42:58', '2022-09-25 00:39:46'),
+(2, 'Tran', 'Thuy', 'tranthanhbinhmathdephcm002', 'tranthanhbinhmathdephcm.002@gmail.com', 'AF', 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '1', 2, NULL, NULL, 'AF', 1, 'tranthanhbinhmathdephcm.002', '930936637594', 0, '0.00000000', '$2y$10$3IDQB2LX3OdtIHNrXI89AOV1EbwW8.hUoydmXRfml0JLe4ypIodku', '62f524064be621660232710.png', '{\"address\":\"10 Vo Van Tan\",\"state\":\"HCMC\",\"zip\":\"70000\",\"country\":\"Afghanistan\",\"city\":\"HCMC\"}', 1, 1, 1, NULL, NULL, 0, 1, NULL, NULL, '2022-08-11 08:44:03', '2022-09-25 00:29:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_blogs`
+--
+
+CREATE TABLE `user_blogs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `ip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blog_id` bigint(20) UNSIGNED NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_blogs`
+--
+
+INSERT INTO `user_blogs` (`id`, `ip`, `blog_id`, `status`, `created_at`, `updated_at`) VALUES
+(1, '127.0.0.1', 1, 1, '2022-09-24 10:03:17', '2022-09-24 16:03:17'),
+(2, '127.0.0.1', 3, 1, '2022-09-24 05:39:56', '2022-09-18 05:39:56'),
+(3, '127.0.0.1', 2, 1, '2022-09-21 05:39:56', '2022-09-20 05:39:56');
 
 -- --------------------------------------------------------
 
@@ -836,7 +1505,35 @@ CREATE TABLE `user_logins` (
 INSERT INTO `user_logins` (`id`, `user_id`, `user_ip`, `city`, `country`, `country_code`, `longitude`, `latitude`, `browser`, `os`, `created_at`, `updated_at`) VALUES
 (1, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-08-11 08:42:59', '2022-08-11 08:42:59'),
 (2, 2, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-08-11 08:44:03', '2022-08-11 08:44:03'),
-(3, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-08-13 01:23:54', '2022-08-13 01:23:54');
+(3, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-08-13 01:23:54', '2022-08-13 01:23:54'),
+(4, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-08-13 18:09:43', '2022-08-13 18:09:43'),
+(5, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-08-13 19:53:37', '2022-08-13 19:53:37'),
+(6, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-09-22 06:46:32', '2022-09-22 06:46:32'),
+(7, 1, '127.0.0.1', '', '', '', '', '', 'Chrome', 'Windows 10', '2022-09-24 04:02:44', '2022-09-24 04:02:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_verification_codes`
+--
+
+CREATE TABLE `user_verification_codes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `type` tinyint(1) NOT NULL,
+  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `expired_at` date DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_verification_codes`
+--
+
+INSERT INTO `user_verification_codes` (`id`, `user_id`, `type`, `code`, `expired_at`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '357342', '2022-10-05', 0, '2022-09-24 22:35:44', '2022-09-24 22:35:44');
 
 -- --------------------------------------------------------
 
@@ -855,6 +1552,13 @@ CREATE TABLE `winners` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `winners`
+--
+
+INSERT INTO `winners` (`id`, `ticket_id`, `user_id`, `phase_id`, `ticket_number`, `level`, `win_bonus`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 3, '1', 0, '21.00000000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -975,9 +1679,49 @@ ALTER TABLE `admin_password_resets`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `admin_settings`
+--
+ALTER TABLE `admin_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `blogs_slug_unique` (`slug`),
+  ADD KEY `blogs_category_id_foreign` (`category_id`),
+  ADD KEY `blogs_user_id_foreign` (`user_id`);
+
+--
+-- Indexes for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `blog_comments_blog_id_foreign` (`blog_id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `commission_logs`
 --
 ALTER TABLE `commission_logs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1011,6 +1755,19 @@ ALTER TABLE `frontends`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `galleries`
+--
+ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `galleries_category_id_foreign` (`category_id`);
+
+--
+-- Indexes for table `gallery_categories`
+--
+ALTER TABLE `gallery_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `gateways`
 --
 ALTER TABLE `gateways`
@@ -1041,10 +1798,50 @@ ALTER TABLE `lotteries`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `menus`
+--
+ALTER TABLE `menus`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `oauth_access_tokens`
+--
+ALTER TABLE `oauth_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `oauth_access_tokens_user_id_index` (`user_id`);
+
+--
+-- Indexes for table `oauth_auth_codes`
+--
+ALTER TABLE `oauth_auth_codes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `oauth_clients`
+--
+ALTER TABLE `oauth_clients`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `oauth_clients_user_id_index` (`user_id`);
+
+--
+-- Indexes for table `oauth_personal_access_clients`
+--
+ALTER TABLE `oauth_personal_access_clients`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `oauth_personal_access_clients_client_id_index` (`client_id`);
+
+--
+-- Indexes for table `oauth_refresh_tokens`
+--
+ALTER TABLE `oauth_refresh_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`);
 
 --
 -- Indexes for table `pages`
@@ -1067,10 +1864,50 @@ ALTER TABLE `phases`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `portfolios`
+--
+ALTER TABLE `portfolios`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `portfolios_category_id_foreign` (`category_id`);
+
+--
+-- Indexes for table `portfolio_categories`
+--
+ALTER TABLE `portfolio_categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pricing_features`
+--
+ALTER TABLE `pricing_features`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pricing_features_plan_id_foreign` (`plan_id`);
+
+--
+-- Indexes for table `pricing_plans`
+--
+ALTER TABLE `pricing_plans`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `referrals`
 --
 ALTER TABLE `referrals`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sessions_user_id_index` (`user_id`),
+  ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
 -- Indexes for table `subscribers`
@@ -1097,6 +1934,19 @@ ALTER TABLE `support_tickets`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `teams_category_id_foreign` (`category_id`);
+
+--
+-- Indexes for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tickets`
 --
 ALTER TABLE `tickets`
@@ -1116,10 +1966,24 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`,`email`);
 
 --
+-- Indexes for table `user_blogs`
+--
+ALTER TABLE `user_blogs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_blogs_blog_id_foreign` (`blog_id`);
+
+--
 -- Indexes for table `user_logins`
 --
 ALTER TABLE `user_logins`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user_verification_codes`
+--
+ALTER TABLE `user_verification_codes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_verification_codes_user_id_foreign` (`user_id`);
 
 --
 -- Indexes for table `winners`
@@ -1168,9 +2032,45 @@ ALTER TABLE `admin_password_resets`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `admin_settings`
+--
+ALTER TABLE `admin_settings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+
+--
+-- AUTO_INCREMENT for table `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `blog_categories`
+--
+ALTER TABLE `blog_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `commission_logs`
 --
 ALTER TABLE `commission_logs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -1204,6 +2104,18 @@ ALTER TABLE `frontends`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
+-- AUTO_INCREMENT for table `galleries`
+--
+ALTER TABLE `galleries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `gallery_categories`
+--
+ALTER TABLE `gallery_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `gateways`
 --
 ALTER TABLE `gateways`
@@ -1234,10 +2146,28 @@ ALTER TABLE `lotteries`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `menus`
+--
+ALTER TABLE `menus`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=295;
+
+--
+-- AUTO_INCREMENT for table `oauth_clients`
+--
+ALTER TABLE `oauth_clients`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `oauth_personal_access_clients`
+--
+ALTER TABLE `oauth_personal_access_clients`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -1258,16 +2188,46 @@ ALTER TABLE `phases`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `portfolios`
+--
+ALTER TABLE `portfolios`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `portfolio_categories`
+--
+ALTER TABLE `portfolio_categories`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `pricing_features`
+--
+ALTER TABLE `pricing_features`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `pricing_plans`
+--
+ALTER TABLE `pricing_plans`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `referrals`
 --
 ALTER TABLE `referrals`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `subscribers`
 --
 ALTER TABLE `subscribers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `support_attachments`
@@ -1288,6 +2248,18 @@ ALTER TABLE `support_tickets`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
@@ -1306,16 +2278,28 @@ ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `user_blogs`
+--
+ALTER TABLE `user_blogs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `user_logins`
 --
 ALTER TABLE `user_logins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `user_verification_codes`
+--
+ALTER TABLE `user_verification_codes`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `winners`
 --
 ALTER TABLE `winners`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `win_bonuses`
@@ -1334,6 +2318,59 @@ ALTER TABLE `withdrawals`
 --
 ALTER TABLE `withdraw_methods`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `blogs`
+--
+ALTER TABLE `blogs`
+  ADD CONSTRAINT `blogs_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `blog_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `blogs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `blog_comments`
+--
+ALTER TABLE `blog_comments`
+  ADD CONSTRAINT `blog_comments_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `galleries`
+--
+ALTER TABLE `galleries`
+  ADD CONSTRAINT `galleries_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `gallery_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `portfolios`
+--
+ALTER TABLE `portfolios`
+  ADD CONSTRAINT `portfolios_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `portfolio_categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `pricing_features`
+--
+ALTER TABLE `pricing_features`
+  ADD CONSTRAINT `pricing_features_plan_id_foreign` FOREIGN KEY (`plan_id`) REFERENCES `pricing_plans` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `teams`
+--
+ALTER TABLE `teams`
+  ADD CONSTRAINT `teams_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_blogs`
+--
+ALTER TABLE `user_blogs`
+  ADD CONSTRAINT `user_blogs_blog_id_foreign` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_verification_codes`
+--
+ALTER TABLE `user_verification_codes`
+  ADD CONSTRAINT `user_verification_codes_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
